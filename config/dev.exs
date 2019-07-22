@@ -2,9 +2,9 @@ use Mix.Config
 
 # Configure your database
 config :lime, Lime.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "lime_dev",
+  username: System.get_env("DB_USER"),
+  password: System.get_env("DB_PASSWORD"),
+  database: System.get_env("DB_NAME"),
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
